@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Person page</title>
+</head>
+<body>
+	<div style="background-color:#eeedfa; border-radius:15px;"><br/>
+		<h2 th:text="${user.getName()}" align="center"></h2><br/>
+	</div>
+	<p>Total sum on account:</p>
+	<p th:text="${user.getWallet()}" /><br/>
+	<form th:method="DELETE" th:action="@{/users/{id}/remove(id=${user.getId()})}">
+		<input type="submit" value="Delete account"/>
+	</form>
+</body>
+</html>
